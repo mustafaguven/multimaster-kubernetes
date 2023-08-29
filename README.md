@@ -39,15 +39,26 @@ bu config haproxy sunucusu 6443 portunu dinleyecek ve gelen istekleri round robi
 sudo su -
 
 wget https://github.com/containerd/containerd/releases/download/v1.6.8/containerd-1.6.8-linux-amd64.tar.gz
-tar Cxzvf /usr/local containerd-1.6.8-linux-amd64.tar.gz
+tar Cxzvf /usr/local containerd-1.7.5-linux-amd64.tar.gz
 
-wget https://github.com/opencontainers/runc/releases/download/v1.1.3/runc.amd64
+-- eski
+-- wget https://github.com/containerd/containerd/releases/download/v1.6.8/containerd-1.7.5-linux-amd64.tar.gz
+-- tar Cxzvf /usr/local containerd-1.7.5-linux-amd64.tar.gz
+
+wget https://github.com/opencontainers/runc/releases/download/v1.1.9/runc.amd64
 install -m 755 runc.amd64 /usr/local/sbin/runc
 
-wget https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
+-- eski
+-- wget https://github.com/opencontainers/runc/releases/download/v1.1.3/runc.amd64
+-- install -m 755 runc.amd64 /usr/local/sbin/runc
+
+wget https://github.com/containernetworking/plugins/releases/download/v1.3.0/cni-plugins-linux-amd64-v1.3.0.tgz
+
+-- eski
+-- wget https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
 
 mkdir -p /opt/cni/bin
-tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
+tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.3.0.tgz
 
 mkdir -p /etc/containerd/
 containerd config default | sudo tee /etc/containerd/config.toml
