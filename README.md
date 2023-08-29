@@ -92,8 +92,14 @@ EOF
 sudo sysctl --system
 ```
 
+## debian icin!
+```
+sudo mkdir -p /etc/apt/keyrings
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes.gpg
+```
 
-## kubeadm, kubelet kurulumları
+## kubeadm, kubelet kurulumları (debian icin altta verilen bolumu calistir)
 
 ```
 sudo apt-get update
@@ -104,6 +110,7 @@ sudo apt-get update
 sudo apt-get install -y kubelet kubeadm 
 sudo apt-mark hold kubelet kubeadm 
 ```
+
 
 
 ## kubeadm init domain name ile birlikte
