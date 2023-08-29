@@ -38,7 +38,7 @@ bu config haproxy sunucusu 6443 portunu dinleyecek ve gelen istekleri round robi
 ```
 sudo su -
 
-wget https://github.com/containerd/containerd/releases/download/v1.6.8/containerd-1.6.8-linux-amd64.tar.gz
+wget https://github.com/containerd/containerd/releases/download/v1.7.5/containerd-1.7.5-linux-amd64.tar.gz
 tar Cxzvf /usr/local containerd-1.7.5-linux-amd64.tar.gz
 
 -- eski
